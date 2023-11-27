@@ -43,7 +43,8 @@ public abstract class MonthApptDecorator implements MonthAppt {
 		are on the same day and at the same time as this one, 
 		i.e. how many appointments have been added that 
 		conflict with this one.*/
-		return dayTimeCount(day, slot) + 1;
+		if (delegate.getDayOfMonth() == day && delegate.getTimeSlot() == slot) return delegate.dayTimeCount(day, slot) + 1;
+		else return delegate.DayTimeCount();
 	}
 	@Override
 	public String timeConlict() {
@@ -65,6 +66,8 @@ public abstract class MonthApptDecorator implements MonthAppt {
 		Hence calling this method will only print the 
 		appointments on this day. See the output at the end of
 		ApptDriver.java*/
+		delegate.printAppointments();
+		if (delegate.getDayOfMonth() == day) System.out.println(toString());
 	}
 	@Override
 	public String toString() {

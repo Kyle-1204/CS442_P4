@@ -45,7 +45,8 @@ public abstract class ApptDecorator implements ApptsForMonth {
 		 * and at the same time as this one, i.e. 
 		 * how many appointments have been added 
 		 * that conflict with this one.*/
-		return dayTimeCount(day, slot) + 1;
+		if (delegate.getDayOfMonth() == day && delegate.getTimeSlot() == slot) return delegate.dayTimeCount(day, slot) + 1;
+		else return delegate.DayTimeCount();
 		
 	}
 	@Override
@@ -62,7 +63,7 @@ public abstract class ApptDecorator implements ApptsForMonth {
 	}
 	@Override
 	public void printAppointments(int day) {
-		TODO
+		// TODO
 		/* which only prints anything for this 
 		 * decorator if day matches the field 
 		 * dayOfMonth.
@@ -70,6 +71,8 @@ public abstract class ApptDecorator implements ApptsForMonth {
 		 * print the appointments on this day. 
 		 * See the output at the end of Driver.java
 		 */
+		next.printAppointments();
+		if (next.getDayOfMonth() == day) System.out.println(toString());
 	}
 	@Override
 	public String toString() {

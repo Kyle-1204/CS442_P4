@@ -23,6 +23,7 @@ public class ThermostatRemote {
 			if (stat.getTemperature() > newTemp){
 				stat.cooler();
 			}
+			if (stat.getTemperature() == 50 || stat.getTemperature() == 90) break;
 		}
 
 	}

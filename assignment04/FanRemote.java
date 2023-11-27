@@ -23,6 +23,7 @@ public class FanRemote {
 			if (fan.getSpeed() > newSpeed){
 				fan.slower();
 			}
+			if (fan.getSpeed() == 0 || fan.getSpeed() == 10) break;
 		}
 	}
 

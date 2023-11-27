@@ -25,6 +25,7 @@ public class TVRemote {
 			if (tv.getChannel() > newChannel){
 				tv.down();
 			}
+			if (tv.getChannel() == 2 || tv.getChannel() == 500) break;
 		}
 	}
 }

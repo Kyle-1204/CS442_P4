@@ -32,7 +32,7 @@ public abstract class MonthApptDecorator implements MonthAppt {
 	}
 	@Override
 	public int dayTimeCount(int day, int slot) {
-		TODO
+		// TODO
 		/*adds 1 to the dayTimeCount of delegate if day, 
 		slot match the fields dayOfMonth and timeSlot 
 		and otherwise adds nothing. The resulting value 
@@ -43,6 +43,7 @@ public abstract class MonthApptDecorator implements MonthAppt {
 		are on the same day and at the same time as this one, 
 		i.e. how many appointments have been added that 
 		conflict with this one.*/
+		return dayTimeCount(day, slot) + 1;
 	}
 	@Override
 	public String timeConlict() {

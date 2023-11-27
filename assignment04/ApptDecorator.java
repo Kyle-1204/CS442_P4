@@ -45,8 +45,8 @@ public abstract class ApptDecorator implements ApptsForMonth {
 		 * and at the same time as this one, i.e. 
 		 * how many appointments have been added 
 		 * that conflict with this one.*/
-		if (delegate.getDayOfMonth() == day && delegate.getTimeSlot() == slot) return delegate.dayTimeCount(day, slot) + 1;
-		else return delegate.DayTimeCount();
+		if (next.getDayOfMonth() == day && next.getTimeSlot() == slot) return next.dayTimeCount(day, slot) + 1;
+		else return next.dayTimeCount(day, slot) + 0;
 		
 	}
 	@Override

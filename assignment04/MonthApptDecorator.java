@@ -44,7 +44,7 @@ public abstract class MonthApptDecorator implements MonthAppt {
 		i.e. how many appointments have been added that 
 		conflict with this one.*/
 		if (delegate.getDayOfMonth() == day && delegate.getTimeSlot() == slot) return delegate.dayTimeCount(day, slot) + 1;
-		else return delegate.DayTimeCount();
+		else return delegate.dayTimeCount(day, slot) + 0;
 	}
 	@Override
 	public String timeConlict() {
@@ -60,7 +60,7 @@ public abstract class MonthApptDecorator implements MonthAppt {
 	}
 	@Override
 	public void printAppointments(int day) {
-		TODO
+		//TODO
 		/*which only prints anything for this decorator if 
 		day matches the field dayOfMonth.
 		Hence calling this method will only print the 
